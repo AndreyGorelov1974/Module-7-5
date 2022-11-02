@@ -24,13 +24,17 @@ int main()
 	int widthCoordinatePlane = 20;
 	int heightCoordinatePlane = 20;
 
+	//Определяем центральные линии
+	int xCenterLine = widthCoordinatePlane / 2;
+	int yCenterLine = heightCoordinatePlane / 2;
+
 	for (int y = 1; y <= heightCoordinatePlane; y++) {
 		for (int x = 1; x <= widthCoordinatePlane; x++) {
-			if ((x == widthCoordinatePlane / 2) && (y == 1)) std::cout << "^";
-			else if (x == widthCoordinatePlane / 2) std::cout << "|";
-			else if ((y == heightCoordinatePlane / 2) && (x == widthCoordinatePlane)) std::cout << ">";
-			else if ((y == heightCoordinatePlane / 2) && (x == widthCoordinatePlane / 2)) std::cout << "+";
-			else if (y == heightCoordinatePlane / 2) std::cout << "-";
+			if (x == xCenterLine && y == 1) std::cout << "^";
+			else if (y == yCenterLine && x == widthCoordinatePlane) std::cout << ">";
+			else if (y == yCenterLine && x == xCenterLine) std::cout << "+";
+			else if (x == xCenterLine) std::cout << "|";
+			else if (y == yCenterLine) std::cout << "-";
 			else std::cout << " ";
 		}
 		std::cout << std::endl;
